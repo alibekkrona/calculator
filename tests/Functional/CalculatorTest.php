@@ -45,6 +45,9 @@ class CalculatorTest extends TestCase
 
         $result = $calculator->execute(1, '/', 0);
         $this->assertEquals('Division by zero is not allowed', $result);
+
+        $result = $calculator->execute(6, '/', 2);
+        $this->assertEquals(3, $result);
     }
 
     public function testSubtraction(): void

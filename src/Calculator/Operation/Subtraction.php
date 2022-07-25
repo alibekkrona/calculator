@@ -6,13 +6,15 @@ class Subtraction  extends BaseOperation
 {
     const OPERATION = '-';
 
+    public function execute(array $operands): float
+    {
+        $this->operandsValidation($operands);
+
+        return $operands[0] - $operands[1];
+    }
+
     protected function getOperandsCount(): int
     {
         return 2;
-    }
-
-    public function execute(array $operands): float
-    {
-       return $operands[0] - $operands[1];
     }
 }

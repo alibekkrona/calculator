@@ -13,6 +13,8 @@ class Sqrt extends BaseOperation
 
     public function execute(array $operands): float
     {
+        $this->operandsValidation($operands);
+
         return sqrt($operands[0]);
     }
 }

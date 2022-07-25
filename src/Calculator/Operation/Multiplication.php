@@ -13,6 +13,8 @@ class Multiplication  extends BaseOperation
 
     public function execute(array $operands): float
     {
+        $this->operandsValidation($operands);
+
         return $operands[0] * $operands[1];
     }
 }
