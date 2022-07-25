@@ -6,24 +6,21 @@ The CLI calculator performs the basic operations:
 * division (/)
 * square root (sqrt)
 
-# Examples
-Example 1: <br/>
-(input) <br/>
-php calc 5 + 2 <br/>
-(output) <br/>
-7<br/>
+# Usage
+Addition: <br/>
+php calc 5 + 2
 
-Example 2: <br/>
-(input) <br/>
-php calc 9 sqrt <br/>
-(output) <br/>
-3 <br/>
+Sqrt: <br/>
+php calc 9 sqrt
 
-Example 3: <br/>
-(input) <br/>
-php calc 5 x 5 <br/>
-(output) <br/>
-25 <br/>
+Multiplication 3: <br/>
+php calc 5 x 5
+
+Division: <br/>
+php calc 6 / 2
+
+Subtraction: <br/>
+php calc 6 - 2
 
 # Install
 * Run docker: make dc_build dc_up
@@ -34,6 +31,7 @@ php calc 5 x 5 <br/>
 # Tests
 * Go into php container make app_bash
 * Run: composer test
+* Run: composer test-coverage
 
 
 
