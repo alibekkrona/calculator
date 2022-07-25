@@ -5,7 +5,10 @@ use App\Calculator\Calculator;
 
 require_once './vendor/autoload.php';
 
-[, $a, $operation, $b] = $_SERVER['argv'];
+$a = $_SERVER['argv'][1] ?? null;
+$operation = $_SERVER['argv'][2] ?? null;
+$b = $_SERVER['argv'][3] ?? null;
+
 $calculator = new Calculator();
 
 echo $calculator->execute($a, $operation, $b);
