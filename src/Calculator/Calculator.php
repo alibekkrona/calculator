@@ -21,11 +21,12 @@ class Calculator
         Sqrt::OPERATION => Sqrt::class,
     ];
 
-    public function execute($operands, $operationName): string
+    public function execute($a, $operationName, $b): string
     {
         try {
-            $this->validate($operands, $operationName);
+            $this->validate($a, $operationName, $b);
             $operation = $this->getOperation($operationName);
+            $operands = $b === null ? [$a] : [$a, $b];
 
             return $operation->execute($operands);
         } catch (\Throwable $e) {
@@ -33,13 +34,13 @@ class Calculator
         }
     }
 
-    protected function validate($operands, $operationName): void
+    protected function validate($a, $operationName, $b): void
     {
         if (!array_key_exists($operationName, $this->supportedOperations)) {
             throw new ValidationException('Operation is not supported');
         }
 
-        if (count($operands) == 0) {
+        if ($a === null && $b === null) {
             throw new ValidationException('Operand(s) should be provided');
         }
     }
