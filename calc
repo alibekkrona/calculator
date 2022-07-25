@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+use App\Calculator\Calculator;
+
+require_once './vendor/autoload.php';
+
+$arguments = $_SERVER['argv'];
+$operation = $arguments[2] ?? null;
+unset($arguments[0], $arguments[2]);
+
+$calculator = new Calculator();
+
+echo $calculator->execute(
+        array_values($arguments),
+        $operation
+);
+
+echo PHP_EOL;
