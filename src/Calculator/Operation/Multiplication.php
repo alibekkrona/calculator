@@ -11,10 +11,8 @@ class Multiplication  extends BaseOperation
         return 2;
     }
 
-    public function execute(array $operands): float
+    protected function mathAction(array $operands): float
     {
-        $this->operandsValidation($operands);
-
         return $operands[0] * $operands[1];
     }
 }

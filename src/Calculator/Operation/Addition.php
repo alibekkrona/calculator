@@ -6,15 +6,13 @@ class Addition extends BaseOperation
 {
     const OPERATION = '+';
 
+    protected function mathAction(array $operands): float
+    {
+        return $operands[0] + $operands[1];
+    }
+
     protected function getOperandsCount(): int
     {
         return 2;
-    }
-
-    public function execute(array $operands): float
-    {
-        $this->operandsValidation($operands);
-
-        return $operands[0] + $operands[1];
     }
 }

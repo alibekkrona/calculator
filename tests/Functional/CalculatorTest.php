@@ -76,10 +76,10 @@ class CalculatorTest extends TestCase
     {
         $calculator = new Calculator();
 
-        $result = $calculator->execute(4, 'sqrt', null);
+        $result = $calculator->execute(4, 'sqrt');
         $this->assertEquals(2, $result);
 
-        $result = $calculator->execute(4.41, 'sqrt', null);
+        $result = $calculator->execute(4.41, 'sqrt');
         $this->assertEquals(2.1, $result);
     }
 }

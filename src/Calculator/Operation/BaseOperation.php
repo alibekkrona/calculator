@@ -8,7 +8,13 @@ abstract class BaseOperation
 {
     abstract protected function getOperandsCount(): int;
 
-    abstract public function execute(array $operands): float;
+    abstract protected function mathAction(array $operands): float;
+
+    public function execute(array $operands): float
+    {
+        $this->operandsValidation($operands);
+        return $this->mathAction($operands);
+    }
 
     protected function operandsValidation(array $operands): void
     {

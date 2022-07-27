@@ -8,9 +8,8 @@ class Division extends BaseOperation implements ISpeciallyValidated
 {
     const OPERATION = '/';
 
-    public function execute(array $operands): float
+    protected function mathAction(array $operands): float
     {
-        $this->operandsValidation($operands);
         $this->specialValidation($operands);
 
         return $operands[0] / $operands[1];

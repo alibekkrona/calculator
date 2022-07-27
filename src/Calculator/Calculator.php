@@ -21,7 +21,7 @@ class Calculator
         Sqrt::OPERATION => Sqrt::class,
     ];
 
-    public function execute($a, $operationName, $b): string
+    public function execute($a, $operationName, $b = null): string
     {
         try {
             $this->validate($a, $operationName, $b);
